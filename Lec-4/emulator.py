@@ -85,8 +85,9 @@ def run(mem, cmd, base = 0) :
         else :
             raise RuntimeError('invalid command')
 
-mem, reg = run({'8C' : '20'}, " 108C 2100 2A01 8BA0 A001 A107 711B 8BA0 A001 A107 711B 8BA0 A001 A107 711B 8BA0 A001 A107 711B 8BA0 A001 A107 711B 8BA0 A001 A107 711B 8BA0 A001 A107 711B 8BA0 A001 A107 711B 318C C000 ", base = 0x30)
-# mem, reg = run({}, '2012 2111 8210 7310 C000')
+mem, reg = run({'A5' : '12', 'A6' : '34'}, "10A5 2A0F 800A 11A6 2AF0 811A 7001 30A6 C000")
+print('A5:', mem['A5'])
+print('A6:', mem['A6'])
 # print('>> mem:', mem)
 # print('>> reg:', reg)
 

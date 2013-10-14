@@ -93,16 +93,30 @@
 
 
 \begin{homeworkProblem}[Problem 6]
-  Suppose three values x, y, and z are stored in a machine’s memory. Describe the sequence of events (loading registers from memory, saving values in memory, and so on) that leads to the computation of x ? y ? z. How about (2x) ? y?
+  Suppose three values x, y, and z are stored in a machine’s memory. Describe the sequence of events (loading registers from memory, saving values in memory, and so on) that leads to the computation of x + y + z. How about (2x) + y?
   
   \Answer 
   \begin{itemize}
-  \item Get x from memory and put it in a register.
-  \item Get y from memory and put it in another register. 
-  \item Activate the addition circuitry with the registers used in Steps 1 and 2 as inputs and another register designated to hold the result.
-  \item Get z from memory and put it in another register.
-  \item Activate the addition circuitry with the registers used in Steps 3 and 4 as inputs and another register designated to hold the result.
-  \item Store the result in memory.
+  \item \texttt{x + y + z}
+
+    \begin{enumerate}
+    \item Get x from memory and put it in a register.
+    \item Get y from memory and put it in another register. 
+    \item Activate the addition circuitry with the registers used in Steps 1 and 2 as inputs and another register designated to hold the result.
+    \item Get z from memory and put it in another register.
+    \item Activate the addition circuitry with the registers used in Steps 3 and 4 as inputs and another register designated to hold the result.
+    \item Store the result in memory.
+    \end{enumerate}
+  \item \texttt{(2x) + y}
+
+    \begin{enumerate}
+    \item Get x from memory and put it in a register.
+    \item Put 2 in a another register.
+    \item Activate the multiplication circuitry with the registers used in Steps 1 and 2 as inputs and another register designated to hold the result.
+    \item Get y from memory and put it in another register.
+    \item Activate the addition circuitry with the registers used in Steps 3 and 4 as inputs and another register designated to hold the result.
+    \item Store the result in memory.
+    \end{enumerate}
   \end{itemize}
   
 \end{homeworkProblem}
@@ -173,7 +187,7 @@ B038
 C000
 \end{verbatim}
   
-  \Answer 
+  \Answer Copy memory 0x01 to memory 0x11, copy memory 0x02 to memory 0x12, copy memory 0x03 to memory 0x13. 
   
 \end{homeworkProblem}
 
@@ -207,10 +221,10 @@ C000
   \item[c.]
     \begin{verbatim}
 10A5
-2AF0
+2A0F
 800A
 11A6
-2A0F
+2AF0
 811A
 7001
 30A6
